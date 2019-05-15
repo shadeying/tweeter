@@ -2,6 +2,10 @@
   float: right;
 }
 
+.exceedLimit {
+  color: red;
+}
+
 section.new-tweet {
   padding-left: 2em;
   padding-right: 2em;

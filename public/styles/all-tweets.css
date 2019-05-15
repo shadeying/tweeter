@@ -1,0 +1,78 @@
+.tweets-container .username {
+  float: right;
+  line-height: 650%;
+  padding-right: 10px;
+}
+
+.tweets-container .display-name {
+  float: left;
+  line-height: 400%;
+}
+
+.tweets-container img {
+  height: 80px;
+  width: 80px;
+  float: left;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  margin-right: 10px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+article {
+  margin: 1em 2em;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+article.single-tweet {
+  opacity: 0.5;
+}
+
+article.hover {
+  opacity: 1;
+}
+
+article.single-tweet span.actions {
+  opacity: 0;
+}
+
+article.single-tweet span.hover {
+  opacity: 1;
+}
+
+.tweets-container header {
+  height: 110px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.tweets-container p {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 2em;
+}
+
+.tweets-container footer {
+  height: 50px;
+}
+
+.tweets-container footer p {
+  float: left;
+  width: 50%;
+}
+
+.tweets-container footer span.actions {
+  height: 50px;
+  float: right;
+}
+
+.tweets-container footer span.actions img {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+}
