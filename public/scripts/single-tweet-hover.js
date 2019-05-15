@@ -3,7 +3,8 @@ $(document).ready(function() {
   $( "article.single-tweet" ).hover(
     function() {
       $( this ).addClass( "hover" );
-      $( "span.actions" ).addClass( "hover" );
+      const target = document.querySelector("article.single-tweet.hover span.actions");
+      $( target ).addClass( "hover" );
     },
 
     function(){
