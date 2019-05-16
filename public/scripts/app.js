@@ -31,6 +31,7 @@ $(document).ready(function () {
     return $("<article>").addClass("single-tweet").append(header, tweetContent, line, footer);
   }
 
+  //to calculate the time difference from now to when the tweet was created
   function calculateTime(date){
     const years = Math.floor((Date.now() - date) / (1000 * 60 * 60 * 24 * 365));
     if(!years){
