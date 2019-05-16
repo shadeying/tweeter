@@ -43,3 +43,5 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   });
 
 });
+db.collection("tweets").insertOne(newTweet, callback(null, true));
+callback(null, db.collection("tweets").find().toArray((err, tweets) => {tweets.sort(sortNewestFirst); db.close();}));
