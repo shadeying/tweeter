@@ -20,8 +20,8 @@ $(document).ready(function () {
     const line = $("<hr>");
 
     //footer
-    const days = Math.floor((Date.now() - tweetObject.created_at) / (1000 * 60 * 60 * 24));
-    const time = $("<p>").text(`${days} days ago`);
+    const date = calculateTime(tweetObject.created_at);
+    const time = $("<p>").text(`${date.time} ${date.unit} ago`);
     const flag = $(`<span><img src="/images/flag.png"></span>`);
     const retweet = $(`<span><img src="/images/retweet.png"></span>`);
     const like = $(`<span><img src="/images/heart.png"></span>`);
@@ -29,6 +29,36 @@ $(document).ready(function () {
     const footer = $("<footer>").append(time, action);
 
     return $("<article>").addClass("single-tweet").append(header, tweetContent, line, footer);
+  }
+
+  function calculateTime(date){
+    const years = Math.floor((Date.now() - date) / (1000 * 60 * 60 * 24 * 365));
+    if(!years){
+      const months = Math.floor((Date.now() - date) / (1000 * 60 * 60 * 24 * 30));
+      if(!months){
+        const days = Math.floor((Date.now() - date) / (1000 * 60 * 60 * 24));
+        if(!days){
+          const hours = Math.floor((Date.now() - date) / (1000 * 60 * 60));
+          if(!hours){
+            const minutes = Math.floor((Date.now() - date) / (1000 * 60));
+            if(!minutes){
+              const seconds = Math.floor((Date.now() - date) / (1000));
+              return {time: seconds, unit: "seconds"};
+            }else{
+              return {time: minutes, unit: "minutes"};
+            }
+          }else{
+            return {time: hours, unit: "hours"};
+          }
+        }else{
+          return {time: days, unit: "days"};
+        }
+      }else{
+        return {time: months, unit: "months"};
+      }
+    }else{
+      return {time: years, unit: "years"};
+    }
   }
 
   function renderTweets(tweetArray){

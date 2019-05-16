@@ -69,10 +69,15 @@ article.single-tweet:hover span.actions{
   height: 50px;
   float: right;
   margin-right: 1em;
+  margin-top: 5px;
 }
 
 .tweets-container footer span.actions img {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   margin: 5px;
+}
+
+input {
+  border-radius: 5px;
 }
