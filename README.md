@@ -1,8 +1,12 @@
-# Tweeter Project
+# Tweeter Project :bird:
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple single-page AJAX-based Twitter clone that uses jQuery, HTML 5 and plain ol' CSS3.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Screenshots
+!["Homepage with tweet compose box"](https://github.com/shadeying/tweeter/blob/master/docs/show.png?raw=true)
+!["You can hide that annoying box!"](https://github.com/shadeying/tweeter/blob/master/docs/hide.png?raw=true)
+!["Cannot tweet when you have nothing to tweet :|"](https://github.com/shadeying/tweeter/blob/master/docs/empty-error.png?raw=true)
+!["Cannot tweet when you exceed limit too :|"](https://github.com/shadeying/tweeter/blob/master/docs/exceed-error.png?raw=true)
 
 ## Getting Started
 
@@ -13,5 +17,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+- Body-parser
+- Chance
 - Express
 - Node 5.10.x or above
+- MongoDB
+
