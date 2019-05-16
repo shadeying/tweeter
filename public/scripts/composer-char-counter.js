@@ -9,8 +9,12 @@ $(document).ready(function() {
 
     if(wordCount < 0){
       document.getElementsByClassName("counter")[0].style.color = "red";
+    }else{
+      document.getElementsByClassName("counter")[0].style.color = "black";
+      $( "#missing-input" ).slideUp();
+      $( "#exceed" ).slideUp();
+      $( "div.error" ).slideUp();
     }
-
   });
 
 });

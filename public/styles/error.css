@@ -1,0 +1,7 @@
+div.error {
+  color: #b22222;
+  background-color: #f08080;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}

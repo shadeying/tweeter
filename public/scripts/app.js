@@ -4,12 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   function createTweetElement(tweetObject){
     //header
     const avatar = $(`<img src=${tweetObject.user.avatars.regular}>`);
-    const name = $("<span>").addClass("display-name").append($("<h2>").text(tweetObject.user.name));
+    const name = $("<span>").addClass("display-name").append($("<h3>").text(tweetObject.user.name));
     const handle = $("<span>").addClass("username").text(tweetObject.user.handle);
     const header = $("<header>").append(avatar, name, handle);
 
@@ -32,18 +32,40 @@ $(document).ready(function() {
   }
 
   function renderTweets(tweetArray){
-    tweetArray.forEach(function(tweetObject){
+    $(".tweets-container").empty();
+    tweetArray.reverse().forEach(function(tweetObject){
       $("section.tweets-container").append(createTweetElement(tweetObject));
     });
   }
 
-  (function loadTweets(){
-    const tweets = $.get("/tweets", function(data){ renderTweets(data); });
-  })();
+  function loadTweets(){
+    $.get("/tweets", renderTweets);
+  }
+
+  loadTweets();
 
   $( "form" ).submit(function(event) {
-      event.preventDefault();
-      $.post( $( this ).attr("action"), $( this ).serialize());
+    event.preventDefault();
+    const text = document.querySelector("textarea");
+
+    if(text.value && text.value.length <= 140){
+      $.post( $( this ).attr("action"), $( this ).serialize(), loadTweets);
+      text.value = "";
+      $( "span.counter" ).text(140);
+    }else{
+      $( "div.error" ).slideDown();
+      if(!text.value){
+        $( "#missing-input" ).slideDown();
+      }else{
+        $( "#exceed" ).slideDown();
+      }
+    }
   });
+
+  $( "#compose-button" ).click(function(){
+    $( "section.new-tweet" ).slideToggle();
+    $( "textarea[name=text]" ).focus();
+  });
+
 
 });

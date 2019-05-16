@@ -1,12 +1,12 @@
 .tweets-container .username {
   float: right;
-  line-height: 650%;
+  line-height: 700%;
   padding-right: 10px;
 }
 
 .tweets-container .display-name {
   float: left;
-  line-height: 400%;
+  line-height: 500%;
 }
 
 .tweets-container header img {
@@ -30,7 +30,7 @@ article.single-tweet {
   opacity: 0.5;
 }
 
-article.hover {
+article.single-tweet:hover {
   opacity: 1;
 }
 
@@ -38,7 +38,7 @@ article.single-tweet span.actions {
   opacity: 0;
 }
 
-article.single-tweet span.hover {
+article.single-tweet:hover span.actions{
   opacity: 1;
 }
 

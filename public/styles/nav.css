@@ -20,3 +20,20 @@
   font-size: 200%;
   line-height: 250%;
 }
+
+#nav-bar button {
+  float: right;
+  line-height: 250%;
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #00a087;
+  opacity: 0.8;
+}
+
+#nav-bar button:hover {
+  color: black;
+  opacity: 1;
+}
+
