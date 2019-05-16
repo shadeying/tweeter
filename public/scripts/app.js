@@ -22,9 +22,9 @@ $(document).ready(function () {
     //footer
     const date = calculateTime(tweetObject.created_at);
     const time = $("<p>").text(`${date.time} ${date.unit} ago`);
-    const flag = $(`<span><img src="/images/flag.png"></span>`);
-    const retweet = $(`<span><img src="/images/retweet.png"></span>`);
-    const like = $(`<span><img src="/images/heart.png"></span>`);
+    const flag = $(`<span><i class="fa fa-flag"></i></span>`);
+    const retweet = $(`<span><i class="fa fa-retweet"></i></span>`);
+    const like = $(`<span><i class="fa fa-heart"></i></span>`);
     const action = $("<span>").addClass("actions").append(flag, retweet, like);
     const footer = $("<footer>").append(time, action);
 

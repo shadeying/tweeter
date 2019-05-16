@@ -28,6 +28,7 @@ article {
 
 article.single-tweet {
   opacity: 0.5;
+  background-color: white;
 }
 
 article.single-tweet:hover {
@@ -44,12 +45,12 @@ article.single-tweet:hover span.actions{
 
 .tweets-container header {
   height: 110px;
-  background-color: #eee;
+  background-color: #e1fff5;
   border-radius: 10px;
 }
 
 .tweets-container p {
-  width: 100%;
+  word-wrap: break-word;
   padding-left: 1em;
   padding-right: 1em;
   margin-bottom: 2em;
@@ -68,14 +69,12 @@ article.single-tweet:hover span.actions{
 .tweets-container footer span.actions {
   height: 50px;
   float: right;
-  margin-right: 1em;
-  margin-top: 5px;
+  margin-top: 12px;
 }
 
-.tweets-container footer span.actions img {
-  height: 25px;
-  width: 25px;
-  margin: 5px;
+.tweets-container footer span.actions i {
+  height: 30px;
+  width: 30px;
 }
 
 input {
