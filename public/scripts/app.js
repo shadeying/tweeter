@@ -24,8 +24,8 @@ $(document).ready(function () {
     const time = $("<p>").text(`${date.time} ${date.unit} ago`);
     const flag = $(`<span><i class="fa fa-flag"></i></span>`);
     const retweet = $(`<span><i class="fa fa-retweet"></i></span>`);
-    const like = $(`<a href="#!" id="like-button"><i class="fa fa-heart"></i></a>`);
-    const likeCount = $(`<span id="like-count">0</span>`);
+    const like = $(`<a href="#!" class="like-button"><i class="fa fa-heart"></i></a>`);
+    const likeCount = $(`<span class="like-count">0</span>`);
     const action = $("<span>").addClass("actions").append(flag, retweet, like,likeCount);
     const footer = $("<footer>").append(time, action);
 
@@ -99,9 +99,10 @@ $(document).ready(function () {
     $( "textarea[name=text]" ).focus();
   });
 
-  $(document).on( "click", "#like-button", function() {
-    const count = Number($( "#like-count" ).text()) + 1;
-    $( "#like-count" ).text(count);
+  $(document).on( "click", "a.like-button", function(event) {
+    console.log($(this).siblings(".like-count").text());
+    const count = Number($(this).siblings(".like-count").text()) + 1;
+    $(this).siblings(".like-count").text(count);
   });
 
 });

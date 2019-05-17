@@ -81,10 +81,16 @@ input {
   border-radius: 5px;
 }
 
-#like-button {
+a.like-button:link {
+  color: black;
   cursor: pointer;
 }
 
-#like-count {
+a.like-button:active {
+  color: red;
+  cursor: pointer;
+}
+
+.tweets-container footer span.like-count {
   margin-right: 5px;
 }
