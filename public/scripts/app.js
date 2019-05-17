@@ -24,8 +24,9 @@ $(document).ready(function () {
     const time = $("<p>").text(`${date.time} ${date.unit} ago`);
     const flag = $(`<span><i class="fa fa-flag"></i></span>`);
     const retweet = $(`<span><i class="fa fa-retweet"></i></span>`);
-    const like = $(`<span><i class="fa fa-heart"></i></span>`);
-    const action = $("<span>").addClass("actions").append(flag, retweet, like);
+    const like = $(`<a href="#!" id="like-button"><i class="fa fa-heart"></i></a>`);
+    const likeCount = $(`<span id="like-count">0</span>`);
+    const action = $("<span>").addClass("actions").append(flag, retweet, like,likeCount);
     const footer = $("<footer>").append(time, action);
 
     return $("<article>").addClass("single-tweet").append(header, tweetContent, line, footer);
@@ -98,5 +99,9 @@ $(document).ready(function () {
     $( "textarea[name=text]" ).focus();
   });
 
+  $(document).on( "click", "#like-button", function() {
+    const count = Number($( "#like-count" ).text()) + 1;
+    $( "#like-count" ).text(count);
+  });
 
 });

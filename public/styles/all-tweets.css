@@ -80,3 +80,11 @@ article.single-tweet:hover span.actions{
 input {
   border-radius: 5px;
 }
+
+#like-button {
+  cursor: pointer;
+}
+
+#like-count {
+  margin-right: 5px;
+}
