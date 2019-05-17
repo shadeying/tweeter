@@ -13,6 +13,10 @@ module.exports = function makeDataHelpers(db) {
     getTweets: function(callback) {
       const sortNewestFirst = (a, b) => a.created_at - b.created_at;
       db.collection("tweets").find().toArray((err,results) => {callback(null, results.sort(sortNewestFirst))});
+    },
+
+    updateLikes: function(tweet, callback) {
+      db.collection("tweets").findOneAndUpdate( {"name": tweet.user }, { $set: { "like": tweet.like} });
     }
 
   };

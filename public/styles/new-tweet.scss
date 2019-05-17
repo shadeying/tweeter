@@ -1,0 +1,44 @@
+div {
+  padding: 2em;
+
+  section.new-tweet {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    margin-top: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: #e1fff5;
+
+    hr {
+      margin-top: -20px;
+    }
+
+    form{
+      textarea {
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 5px;
+        padding-left: 5px;
+      }
+
+      input {
+        border-radius: 5px;
+      }
+
+      span.counter {
+        float: right;
+      }
+    }
+
+    div.error {
+       color: #b22222;
+       background-color: #f08080;
+       border-radius: 10px;
+       margin: 20px;
+       padding: 10px;
+
+    }
+  }
+}

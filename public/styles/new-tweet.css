@@ -1,12 +1,7 @@
-.counter {
-  float: right;
+div {
+  padding: 2em;
 }
-
-.exceedLimit {
-  color: red;
-}
-
-section.new-tweet {
+div section.new-tweet {
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 1em;
@@ -16,18 +11,27 @@ section.new-tweet {
   border-width: 1px;
   background-color: #e1fff5;
 }
-
-div {
-  padding: 2em;
+div section.new-tweet hr {
+  margin-top: -20px;
 }
-
-textarea {
+div section.new-tweet form textarea {
   width: 100%;
   margin-top: 10px;
   padding-top: 5px;
   padding-left: 5px;
 }
-
-hr {
-  margin-top: -20px;
+div section.new-tweet form input {
+  border-radius: 5px;
 }
+div section.new-tweet form span.counter {
+  float: right;
+}
+div section.new-tweet div.error {
+  color: #b22222;
+  background-color: #f08080;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=new-tweet.css.map */

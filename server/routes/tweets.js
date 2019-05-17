@@ -29,10 +29,22 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      like: 0
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    });
+  });
+
+  tweetsRoutes.post("/likes", function(req, res) {
+    const tweet = req.body;
+    DataHelpers.updateLikes(tweet, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

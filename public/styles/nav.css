@@ -1,27 +1,24 @@
-#nav-bar {
+nav#nav-bar {
   top: 0;
   position: fixed;
   height: 80px;
   width: 100%;
   background-color: #00a087;
-  color:  #e8fdff;
+  color: #e8fdff;
   padding: 0px 2em;
 }
-
-#nav-bar .logo {
+nav#nav-bar img.logo {
   height: 80px;
   width: 80px;
   float: left;
   padding-right: 10px;
 }
-
-#nav-bar .header {
+nav#nav-bar span.header {
   float: left;
   font-size: 200%;
   line-height: 250%;
 }
-
-#nav-bar button {
+nav#nav-bar button#compose-button {
   float: right;
   line-height: 250%;
   height: 40px;
@@ -32,8 +29,9 @@
   opacity: 0.8;
 }
 
-#nav-bar button:hover {
+nav#nav-bar button#compose-button:hover {
   color: black;
   opacity: 1;
 }
 
+/*# sourceMappingURL=nav.css.map */

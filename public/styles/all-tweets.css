@@ -1,15 +1,17 @@
-.tweets-container .username {
-  float: right;
-  line-height: 700%;
-  padding-right: 10px;
+section.tweets-container article.single-tweet {
+  margin: 1em 2em;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  opacity: 0.5;
+  background-color: white;
 }
-
-.tweets-container .display-name {
-  float: left;
-  line-height: 500%;
+section.tweets-container article.single-tweet header {
+  height: 110px;
+  background-color: #e1fff5;
+  border-radius: 10px;
 }
-
-.tweets-container header img {
+section.tweets-container article.single-tweet header img {
   height: 80px;
   width: 80px;
   float: left;
@@ -18,79 +20,61 @@
   margin-top: 1em;
   margin-left: 1em;
 }
-
-article {
-  margin: 1em 2em;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 1px;
+section.tweets-container article.single-tweet header .display-name {
+  float: left;
+  line-height: 500%;
 }
-
-article.single-tweet {
-  opacity: 0.5;
-  background-color: white;
+section.tweets-container article.single-tweet header .username {
+  float: right;
+  line-height: 700%;
+  padding-right: 10px;
 }
-
-article.single-tweet:hover {
-  opacity: 1;
-}
-
-article.single-tweet span.actions {
-  opacity: 0;
-}
-
-article.single-tweet:hover span.actions{
-  opacity: 1;
-}
-
-.tweets-container header {
-  height: 110px;
-  background-color: #e1fff5;
-  border-radius: 10px;
-}
-
-.tweets-container p {
+section.tweets-container article.single-tweet p {
   word-wrap: break-word;
   padding-left: 1em;
   padding-right: 1em;
   margin-bottom: 2em;
 }
-
-.tweets-container footer {
+section.tweets-container article.single-tweet footer {
   height: 50px;
 }
-
-.tweets-container footer p {
+section.tweets-container article.single-tweet footer p {
   float: left;
   width: 50%;
   margin-top: 12px;
 }
-
-.tweets-container footer span.actions {
+section.tweets-container article.single-tweet footer span.actions {
   height: 50px;
   float: right;
   margin-top: 12px;
+  opacity: 0;
 }
-
-.tweets-container footer span.actions i {
+section.tweets-container article.single-tweet footer span.actions i {
   height: 30px;
   width: 30px;
 }
-
-input {
-  border-radius: 5px;
-}
-
-a.like-button:link {
+section.tweets-container article.single-tweet footer span.actions form button.like-button {
+  cursor: pointer;
   color: black;
-  cursor: pointer;
 }
-
-a.like-button:active {
-  color: red;
-  cursor: pointer;
+section.tweets-container article.single-tweet footer span.actions form button.like-button i {
+  height: 30px;
+  width: 30px;
 }
-
-.tweets-container footer span.like-count {
+section.tweets-container article.single-tweet footer span.actions span.like-count {
   margin-right: 5px;
 }
+
+section.tweets-container article.single-tweet:hover {
+  opacity: 1;
+}
+
+section.tweets-container article.single-tweet:hover span.actions {
+  opacity: 1;
+}
+
+section.tweets-container article.single-tweet footer span.actions form button.like-button:active {
+  color: red;
+}
+
+/*# sourceMappingURL=all-tweets.css.map */

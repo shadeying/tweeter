@@ -1,0 +1,95 @@
+section.tweets-container {
+
+  article.single-tweet {
+    margin: 1em 2em;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    opacity: 0.5;
+    background-color: white;
+
+    header {
+      height: 110px;
+      background-color: #e1fff5;
+      border-radius: 10px;
+
+      img {
+        height: 80px;
+        width: 80px;
+        float: left;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-top: 1em;
+        margin-left: 1em;
+      }
+
+      .display-name {
+        float: left;
+        line-height: 500%;
+      }
+
+      .username {
+        float: right;
+        line-height: 700%;
+        padding-right: 10px;
+      }
+    }
+
+    p {
+      word-wrap: break-word;
+      padding-left: 1em;
+      padding-right: 1em;
+      margin-bottom: 2em;
+    }
+
+    footer {
+      height: 50px;
+
+      p {
+        float: left;
+        width: 50%;
+        margin-top: 12px;
+      }
+
+      span.actions {
+        height: 50px;
+        float: right;
+        margin-top: 12px;
+        opacity: 0;
+
+        i {
+          height: 30px;
+          width: 30px;
+        }
+
+        form {
+          button.like-button {
+            cursor: pointer;
+            color: black;
+
+            i {
+              height: 30px;
+              width: 30px;
+            }
+          }
+        }
+
+        span.like-count {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+section.tweets-container article.single-tweet:hover {
+  opacity: 1;
+}
+
+section.tweets-container article.single-tweet:hover span.actions{
+  opacity: 1;
+}
+
+section.tweets-container article.single-tweet footer span.actions form button.like-button:active {
+  color: red;
+}
