@@ -24,13 +24,18 @@ main {
   background-color: #4b5f6d;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 700px) {
+  nav#nav-bar button#compose-button,button#register-button {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
   main{
     width: 100%;
   }
-  nav#nav-bar button#compose-button {
-    float: left;
-    width: 50px;
+  nav#nav-bar button#logout-button,button#compose-button,button#register-button {
+    display: none;
   }
   nav#nav-bar span.header {
     display: none;
@@ -44,7 +49,7 @@ main {
   main{
     width: 100%;
   }
-  nav#nav-bar button#compose-button {
+  nav#nav-bar button {
     display: none;
   }
   nav#nav-bar span.header {

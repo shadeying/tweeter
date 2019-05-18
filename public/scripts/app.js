@@ -99,6 +99,16 @@ $(document).ready(function () {
     $( "textarea[name=text]" ).focus();
   });
 
+  $( "#register-button" ).click(function(){
+    $( "section.register" ).slideToggle();
+    $( "textarea[name=username]" ).focus();
+  });
+
+  $( "#login-button" ).click(function(){
+    $( "section.login" ).slideToggle();
+    $( "textarea[name=username]" ).focus();
+  });
+
   $(document).on( "click", "button.like-button", function(event) {
     event.preventDefault();
     let count = 1;
@@ -110,6 +120,6 @@ $(document).ready(function () {
     $.post("/tweets/likes/", { "like": count, "id": id}, loadTweets);
   });
 
-  $.get()
+
 
 });
