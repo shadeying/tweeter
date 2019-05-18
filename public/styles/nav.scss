@@ -20,19 +20,19 @@ nav#nav-bar{
     line-height: 250%;
   }
 
-  button#compose-button {
+  button {
     float: right;
-    line-height: 250%;
     height: 40px;
     width: 100px;
     border-radius: 10px;
     margin-top: 20px;
     color: #00a087;
     opacity: 0.8;
+    margin-left: 5px;
   }
 }
 
-nav#nav-bar button#compose-button:hover {
+nav#nav-bar button:hover {
   color: black;
   opacity: 1;
 }
