@@ -11,7 +11,7 @@ $(document).ready(function () {
     const avatar = $(`<img src=${tweetObject.user.avatars.regular}>`);
     const name = $("<span>").addClass("display-name").append($("<h3>").text(tweetObject.user.name));
     const handle = $("<span>").addClass("username").text(tweetObject.user.handle);
-    const header = $("<header>").append(avatar, name, handle);
+    const header = $("<header>").append(avatar, name, handle).attr("id", tweetObject._id);
 
     //tweet content
     const tweetContent = $("<p>").text(tweetObject.content.text);
@@ -22,10 +22,10 @@ $(document).ready(function () {
     //footer
     const date = calculateTime(tweetObject.created_at);
     const time = $("<p>").text(`${date.time} ${date.unit} ago`);
-    const flag = $(`<span><i class="fa fa-flag"></i></span>`);
-    const retweet = $(`<span><i class="fa fa-retweet"></i></span>`);
-    const like = $(`<form method="POST" action="/likes"><button type="submit" class="like-button"><i class="fa fa-heart"></i></button></form>`);
-    const likeCount = $(`<span class="like-count">0</span>`);
+    const flag = $(`<i class="fa fa-flag"></i>`);
+    const retweet = $(`<i class="fa fa-retweet"></i>`);
+    const like = $(`<form method="POST" action="/tweets/likes/"><button type="submit" class="like-button"><i class="fa fa-heart"></i></button></form>`);
+    const likeCount = $(`<p class="like-count">${tweetObject.like}</p>`);
     const action = $("<span>").addClass("actions").append(flag, retweet, like,likeCount);
     const footer = $("<footer>").append(time, action);
 
@@ -101,10 +101,13 @@ $(document).ready(function () {
 
   $(document).on( "click", "button.like-button", function(event) {
     event.preventDefault();
-    const count = Number($(this).parents(".actions").find(".like-count").text()) + 1;
+    let count = 1;
+    if($(this).parents(".actions").find(".like-count").text() === "1"){
+      count = 0;
+    }
     $(this).parents(".actions").find(".like-count").text(count);
-    const username = $(this).parents("article.single-tweet").find(".display-name").text();
-    $.post("/tweets/likes", { "like": count, "user": username}, loadTweets);
+    const id = $(this).parents("article.single-tweet").find("header").attr("id");
+    $.post("/tweets/likes/", { "like": count, "id": id}, loadTweets);
   });
 
 });

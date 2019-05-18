@@ -1,14 +1,14 @@
 section.tweets-container article.single-tweet {
   margin: 1em 2em;
-  border-style: solid;
+  border: 2px solid #e1fff5;
   border-radius: 10px;
-  border-width: 1px;
   opacity: 0.5;
-  background-color: white;
+  background-color: #e1fff5;
 }
 section.tweets-container article.single-tweet header {
   height: 110px;
-  background-color: #e1fff5;
+  color: #e1fff5;
+  background-color: #4b5f6d;
   border-radius: 10px;
 }
 section.tweets-container article.single-tweet header img {
@@ -40,29 +40,39 @@ section.tweets-container article.single-tweet footer {
 }
 section.tweets-container article.single-tweet footer p {
   float: left;
-  width: 50%;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 section.tweets-container article.single-tweet footer span.actions {
-  height: 50px;
+  height: 30px;
   float: right;
   margin-top: 12px;
   opacity: 0;
+  display: inline-flex;
 }
-section.tweets-container article.single-tweet footer span.actions i {
+section.tweets-container article.single-tweet footer span.actions i.fa-flag {
+  width: 30px;
+}
+section.tweets-container article.single-tweet footer span.actions i.fa-retweet {
+  width: 23px;
+}
+section.tweets-container article.single-tweet footer span.actions form {
   height: 30px;
   width: 30px;
 }
 section.tweets-container article.single-tweet footer span.actions form button.like-button {
   cursor: pointer;
-  color: black;
+  color: #4b5f6d;
+  border: none;
+  background-color: #e1fff5;
+  height: 0px;
+  width: 0px;
 }
-section.tweets-container article.single-tweet footer span.actions form button.like-button i {
+section.tweets-container article.single-tweet footer span.actions p.like-count {
+  margin-right: 5px;
   height: 30px;
   width: 30px;
-}
-section.tweets-container article.single-tweet footer span.actions span.like-count {
-  margin-right: 5px;
+  padding: 0px;
+  margin: 0px;
 }
 
 section.tweets-container article.single-tweet:hover {
