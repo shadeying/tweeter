@@ -38,16 +38,18 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <form class="form-inline" action="/tweets/register/">
-        <button id="register-button">
-          <i class="fa fa-user-plus"></i>
-          Register
-        </button>
-      </form>
-      <form class="form-inline" action="/tweets/login/">
-        <button id="login-button">
-          <i class="fa fa-address-book"></i>
-          Login
+      <button id="register-button">
+        <i class="fa fa-user-plus"></i>
+        Register
+      </button>
+      <button id="login-button">
+        <i class="fa fa-address-book"></i>
+        Login
+      </button>
+      <form class="form-inline" action="/tweets/logout/" method="POST">
+        <button id="logout-button">
+          <i class="fa fa-sign-out"></i>
+          Logout
         </button>
       </form>
       <button id="compose-button">
@@ -58,7 +60,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div>
+      <div class="function">
         <section class="new-tweet" style="display: none;">
           <h2>Compose Tweet</h2>
           <hr>
@@ -71,6 +73,41 @@
             <h2>ERROR</h2>
             <h3 id="missing-input" style="display: none;">Looks like you forgot to enter your TWEET :|</h3>
             <h3 id="exceed" style="display: none;">Ow SNAP! Exceed word limit :|</h3>
+          </div>
+        </section>
+      </div>
+
+      <div class="function">
+        <section class="register" style="display: none;">
+          <h2>Create Account</h2>
+          <hr>
+          <form method="POST" action="/tweets/register">
+            <input type="text" name="username" placeholder="Username"></textarea>
+            <input type="text" name="display-name" placeholder="Display name"></textarea>
+            <input type="password" name="password" placeholder="Your password here">
+            <button type="submit"><i class="fa fa-user-plus"></i>  Register</button>
+          </form>
+          <div class="error" style="display: none;">
+            <h2>ERROR</h2>
+            <h3 id="missing-input" style="display: none;">Looks like you forgot to enter something :|</h3>
+            <h3 id="exist" style="display: none;">Ow SNAP! You already have an account :|</h3>
+          </div>
+        </section>
+      </div>
+
+      <div class="function">
+        <section class="login" style="display: none;">
+          <h2>Login</h2>
+          <hr>
+          <form method="POST" action="/tweets/login">
+            <input type="text" name="username" placeholder="Username"></textarea>
+            <input type="password" name="password" placeholder="Your password here">
+            <button type="submit"><i class="fa fa-address-book"></i>  Login</button>
+          </form>
+          <div class="error" style="display: none;">
+            <h2>ERROR</h2>
+            <h3 id="missing-input" style="display: none;">Looks like you forgot to enter something :|</h3>
+            <h3 id="wrong-password" style="display: none;">Ow SNAP! Wrong password :|</h3>
           </div>
         </section>
       </div>

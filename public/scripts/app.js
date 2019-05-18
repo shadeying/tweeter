@@ -76,7 +76,7 @@ $(document).ready(function () {
 
   loadTweets();
 
-  $( "form" ).submit(function(event) {
+  $( ".new-tweet form" ).submit(function(event) {
     event.preventDefault();
     const text = document.querySelector("textarea");
 
@@ -109,5 +109,7 @@ $(document).ready(function () {
     const id = $(this).parents("article.single-tweet").find("header").attr("id");
     $.post("/tweets/likes/", { "like": count, "id": id}, loadTweets);
   });
+
+  $.get()
 
 });

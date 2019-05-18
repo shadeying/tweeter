@@ -1,7 +1,7 @@
-div {
+div.function {
   padding: 2em;
 }
-div section.new-tweet {
+div.function section {
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 1em;
@@ -11,27 +11,44 @@ div section.new-tweet {
   border-width: 1px;
   background-color: #e1fff5;
 }
-div section.new-tweet hr {
+div.function section hr {
   margin-top: -20px;
 }
-div section.new-tweet form textarea {
+div.function section form textarea {
   width: 100%;
   margin-top: 10px;
   padding-top: 5px;
   padding-left: 5px;
 }
-div section.new-tweet form input {
-  border-radius: 5px;
+div.function section form input {
+  width: 100%;
+  margin-top: 10px;
+  height: 40px;
+  padding-left: 5px;
+  border-radius: 10px;
 }
-div section.new-tweet form span.counter {
+div.function section form button {
+  width: 100px;
+  border-radius: 10px;
+  margin-top: 8px;
+  color: #00a087;
+}
+div.function section form span.counter {
   float: right;
 }
-div section.new-tweet div.error {
+div.function section div.error {
   color: #b22222;
   background-color: #f08080;
   border-radius: 10px;
   margin: 20px;
   padding: 10px;
+}
+
+div.function section.new-tweet input {
+  width: initial;
+  margin-top: initial;
+  height: initial;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=new-tweet.css.map */

@@ -1,7 +1,7 @@
-div {
+div.function {
   padding: 2em;
 
-  section.new-tweet {
+  section {
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 1em;
@@ -24,7 +24,18 @@ div {
       }
 
       input {
-        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        height: 40px;
+        padding-left: 5px;
+        border-radius: 10px;
+      }
+
+      button {
+        width: 100px;
+        border-radius: 10px;
+        margin-top: 8px;
+        color: #00a087;
       }
 
       span.counter {
@@ -41,4 +52,11 @@ div {
 
     }
   }
+}
+
+div.function section.new-tweet input {
+  width: initial;
+  margin-top: initial;
+  height: initial;
+  border-radius: 5px;
 }
