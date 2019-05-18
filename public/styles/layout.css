@@ -23,3 +23,43 @@ main {
   padding-bottom: 30px;
   background-color: #4b5f6d;
 }
+
+@media only screen and (max-width: 400px) {
+  main{
+    width: 100%;
+  }
+  nav#nav-bar button#compose-button {
+    float: left;
+    width: 50px;
+  }
+  nav#nav-bar span.header {
+    display: none;
+  }
+  section.tweets-container article.single-tweet header .display-name {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  main{
+    width: 100%;
+  }
+  nav#nav-bar button#compose-button {
+    display: none;
+  }
+  nav#nav-bar span.header {
+    display: none;
+  }
+  section.tweets-container article.single-tweet header .display-name {
+    display: none;
+  }
+  section.tweets-container article.single-tweet header .username {
+    display: none;
+  }
+  section.tweets-container article.single-tweet footer span.actions {
+    display: none;
+  }
+  section.tweets-container article.single-tweet:hover footer span.actions {
+    display: none;
+  }
+}

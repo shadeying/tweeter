@@ -83,8 +83,10 @@ section.tweets-container article.single-tweet:hover span.actions {
   opacity: 1;
 }
 
-section.tweets-container article.single-tweet footer span.actions form button.like-button:active {
-  color: red;
+section.tweets-container article.single-tweet footer span.actions form button.like-button:active, .like-button:focus {
+  color: #b22222;
+  outline: none;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=all-tweets.css.map */
