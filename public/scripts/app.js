@@ -98,15 +98,15 @@ $(document).ready(function () {
 
   $( ".register form" ).submit(function(event) {
     event.preventDefault();
-    const handle = $("input[name=username]").val();
-    const name = $("input[name=display-name]").val();
-    const password = $("input[name=password]").val();
+    const handle = $(".register input[name=username]").val();
+    const name = $(".register input[name=display-name]").val();
+    const password = $(".register input[name=password]").val();
 
     if(handle && name && password){
       $.post( $( this ).attr("action"), {"handle": handle, "name": name, "password": password});
-      $("input[name=username]").val("");
-      $("input[name=display-name]").val("");
-      $("input[name=password]").val("");
+      $(".register input[name=username]").val("");
+      $(".register input[name=display-name]").val("");
+      $(".register input[name=password]").val("");
       $( "section.register" ).slideUp();
     }else{
       $( ".register div.error" ).slideDown();
@@ -120,13 +120,13 @@ $(document).ready(function () {
 
   $( ".login form" ).submit(function(event) {
     event.preventDefault();
-    const handle = $("input[name=username]").val();
-    const password = $("input[name=password]").val();
+    const handle = $(".login input[name=username]").val();
+    const password = $(".login input[name=password]").val();
 
     if(handle && password){
-      $.post( $( this ).attr("action"), {"handle": handle, "password": password}, loadTweets);
-      $("input[name=username]").val("");
-      $("input[name=password]").val("");
+      $.post( $( this ).attr("action"), {"handle": handle, "password": password});
+      $(".login input[name=username]").val("");
+      $(".login input[name=password]").val("");
       $( "section.login" ).slideUp();
     }else{
       $( ".login div.error" ).slideDown();

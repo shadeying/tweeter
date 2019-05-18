@@ -34,7 +34,16 @@ module.exports = function makeDataHelpers(db) {
     },
 
     userLogin: function(data, callback){
-
+      const handle = "@" + data.handle;
+      const password = data.password;
+      db.collection("tweeter").find({"user.handle": handle}).toArray((err, result) => {
+        const userObject = result[0];
+        if(userObject.user.password === password){
+          callback(null, true);
+        }else{
+          callback(err);
+        }
+      });
     }
 
   };

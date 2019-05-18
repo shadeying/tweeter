@@ -81,7 +81,7 @@ module.exports = function(DataHelpers) {
     }
 
     const data = req.body;
-    DataHelpers.createUser(data, (err) => {
+    DataHelpers.userLogin(data, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
