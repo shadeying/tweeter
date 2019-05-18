@@ -105,6 +105,7 @@ $(document).ready(function () {
       $("input[name=username]").val("");
       $("input[name=display-name]").val("");
       $("input[name=password]").val("");
+      $( "section.register" ).slideUp();
     }else{
       $( ".register div.error" ).slideDown();
       if(handle === 1){
@@ -124,6 +125,7 @@ $(document).ready(function () {
       $.post( $( this ).attr("action"), {"handle": handle, "password": password}, loadTweets);
       $("input[name=username]").val("");
       $("input[name=password]").val("");
+      $( "section.login" ).slideUp();
     }else{
       $( ".login div.error" ).slideDown();
       $( ".login #missing-input" ).slideDown();
