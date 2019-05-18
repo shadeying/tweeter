@@ -2,7 +2,7 @@
 
 const userHelper    = require("../lib/util/user-helper");
 const cookieSession = require("cookie-session");
-const express       = require('express');
+const express       = require("express");
 const tweetsRoutes  = express.Router();
 const app = express();
 
@@ -49,7 +49,7 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/likes/", function(req, res) {
-    if (!req.body || !req.session.user) {
+    if (!req.body) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
@@ -75,7 +75,6 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        req.session.user = data.handle;
         res.status(201).send();
       }
     });
@@ -92,7 +91,6 @@ module.exports = function(DataHelpers) {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        req.session.user = data.handle;
         res.status(201).send();
       }
     });
