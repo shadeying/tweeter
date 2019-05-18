@@ -8,8 +8,9 @@ Tweeter is a simple single-page AJAX-based Twitter clone that uses jQuery, HTML 
 !["Cannot tweet when you have nothing to tweet :|"](https://github.com/shadeying/tweeter/blob/master/docs/empty-error.png?raw=true)
 
 ## Cool Feature :sunglasses:
-- You can like the TWEETS!!!
-- Of course you can as many tweets as you want as well!!
+- You can *like* the TWEETS!!!
+- Of course you can post as *MANY* tweets as you want as well!!
+- Click the "compose" box on the top right corner to TWEET!
 
 ## Getting Started
 
