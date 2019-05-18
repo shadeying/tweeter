@@ -31,6 +31,10 @@ module.exports = function makeDataHelpers(db) {
         "password": password
       }};
       db.collection("tweeter").insertOne(user, (err,results) => {callback(null, true)});
+    },
+
+    userLogin: function(data, callback){
+
     }
 
   };

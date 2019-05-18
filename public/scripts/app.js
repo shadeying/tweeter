@@ -7,29 +7,31 @@
 $(document).ready(function () {
 
   function createTweetElement(tweetObject){
-    //header
-    const avatar = $(`<img src=${tweetObject.user.avatars.regular}>`);
-    const name = $("<span>").addClass("display-name").append($("<h3>").text(tweetObject.user.name));
-    const handle = $("<span>").addClass("username").text(tweetObject.user.handle);
-    const header = $("<header>").append(avatar, name, handle).attr("id", tweetObject._id);
+    if(tweetObject.content){
+      //header
+      const avatar = $(`<img src=${tweetObject.user.avatars.regular}>`);
+      const name = $("<span>").addClass("display-name").append($("<h3>").text(tweetObject.user.name));
+      const handle = $("<span>").addClass("username").text(tweetObject.user.handle);
+      const header = $("<header>").append(avatar, name, handle).attr("id", tweetObject._id);
 
-    //tweet content
-    const tweetContent = $("<p>").text(tweetObject.content.text);
+      //tweet content
+      const tweetContent = $("<p>").text(tweetObject.content.text);
 
-    //create horizontal line
-    const line = $("<hr>");
+      //create horizontal line
+      const line = $("<hr>");
 
-    //footer
-    const date = calculateTime(tweetObject.created_at);
-    const time = $("<p>").text(`${date.time} ${date.unit} ago`);
-    const flag = $(`<i class="fa fa-flag"></i>`);
-    const retweet = $(`<i class="fa fa-retweet"></i>`);
-    const like = $(`<form method="POST" action="/tweets/likes/"><button type="submit" class="like-button"><i class="fa fa-heart"></i></button></form>`);
-    const likeCount = $(`<p class="like-count">${tweetObject.like}</p>`);
-    const action = $("<span>").addClass("actions").append(flag, retweet, like,likeCount);
-    const footer = $("<footer>").append(time, action);
+      //footer
+      const date = calculateTime(tweetObject.created_at);
+      const time = $("<p>").text(`${date.time} ${date.unit} ago`);
+      const flag = $(`<i class="fa fa-flag"></i>`);
+      const retweet = $(`<i class="fa fa-retweet"></i>`);
+      const like = $(`<form method="POST" action="/tweets/likes/"><button type="submit" class="like-button"><i class="fa fa-heart"></i></button></form>`);
+      const likeCount = $(`<p class="like-count">${tweetObject.like}</p>`);
+      const action = $("<span>").addClass("actions").append(flag, retweet, like,likeCount);
+      const footer = $("<footer>").append(time, action);
 
-    return $("<article>").addClass("single-tweet").append(header, tweetContent, line, footer);
+      return $("<article>").addClass("single-tweet").append(header, tweetContent, line, footer);
+    }
   }
 
   //to calculate the time difference from now to when the tweet was created
