@@ -1,9 +1,14 @@
 "use strict";
 
-const userHelper    = require("../lib/util/user-helper")
-
+const userHelper    = require("../lib/util/user-helper");
+const cookieSession = require("cookie-session");
 const express       = require('express');
 const tweetsRoutes  = express.Router();
+
+app.use(cookieSession({
+  name: "session",
+  keys: ["pizza"]
+}));
 
 module.exports = function(DataHelpers) {
 
@@ -65,6 +70,7 @@ module.exports = function(DataHelpers) {
     }
 
     const data = req.body;
+    req.session.user = data.handle;
     DataHelpers.createUser(data, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -81,6 +87,7 @@ module.exports = function(DataHelpers) {
     }
 
     const data = req.body;
+    req.session.user = data.handle;
     DataHelpers.userLogin(data, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -88,6 +95,10 @@ module.exports = function(DataHelpers) {
         res.status(201).send();
       }
     });
+  });
+
+  tweetsRoutes.post("/logout/", function(req, res) {
+    req.session = null;
   });
 
   return tweetsRoutes;
