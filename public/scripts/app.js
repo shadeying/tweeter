@@ -85,13 +85,49 @@ $(document).ready(function () {
       text.value = "";
       $( "span.counter" ).text(140);
     }else{
-      $( "div.error" ).slideDown();
+      $( ".new-tweet div.error" ).slideDown();
       if(!text.value){
-        $( "#missing-input" ).slideDown();
+        $( ".new-tweet #missing-input" ).slideDown();
       }else{
         $( "#exceed" ).slideDown();
       }
     }
+  });
+
+  $( ".register form" ).submit(function(event) {
+    event.preventDefault();
+    const handle = $("input[name=username]").val();
+    const name = $("input[name=display-name]").val();
+    const password = $("input[name=password]").val();
+
+    if(handle && name && password){
+      $.post( $( this ).attr("action"), {"handle": handle, "name": name, "password": password});
+      $("input[name=username]").val("");
+      $("input[name=display-name]").val("");
+      $("input[name=password]").val("");
+    }else{
+      $( ".register div.error" ).slideDown();
+      if(handle === 1){
+        $( "exist" ).slideDown();
+      }else{
+        $( ".register #missing-input" ).slideDown();
+      }
+    }
+  });
+
+  $( ".login form" ).submit(function(event) {
+    event.preventDefault();
+    const handle = $("input[name=username]").val();
+    const password = $("input[name=password]").val();
+
+    if(handle && password){
+      $.post( $( this ).attr("action"), {"handle": handle, "password": password}, loadTweets);
+      $("input[name=username]").val("");
+      $("input[name=password]").val("");
+    }else{
+      $( ".login div.error" ).slideDown();
+      $( ".login #missing-input" ).slideDown();
+      }
   });
 
   $( "#compose-button" ).click(function(){

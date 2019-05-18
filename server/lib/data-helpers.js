@@ -18,6 +18,19 @@ module.exports = function makeDataHelpers(db) {
 
     updateLikes: function(tweet, callback) {
       db.collection("tweeter").update( {"_id": ObjectId(tweet.id)}, { $set: { "like": tweet.like} }, (err,results) => {callback(null, true)});
+    },
+
+    createUser: function(data, callback){
+      const handle = "@" + data.handle;
+      const name = data.name;
+      const password = data.password;
+      const user = {user: {
+        "name": name,
+        "avatars": { "regular": "https://preview.redd.it/udxpo5xhyu811.jpg?width=960&crop=smart&auto=webp&s=d2e1870c7378d7d626c83f7c79a1f0cce0ea36e3"},
+        "handle": handle,
+        "password": password
+      }};
+      db.collection("tweeter").insertOne(user, (err,results) => {callback(null, true)});
     }
 
   };

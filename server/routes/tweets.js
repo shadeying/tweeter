@@ -58,6 +58,22 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  tweetsRoutes.post("/register/", function(req, res) {
+    if (!req.body) {
+      res.status(400).json({ error: 'invalid request: no data in POST body'});
+      return;
+    }
+
+    const data = req.body;
+    DataHelpers.createUser(data, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send();
+      }
+    });
+  });
+
   return tweetsRoutes;
 
 }
