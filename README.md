@@ -6,7 +6,10 @@ Tweeter is a simple single-page AJAX-based Twitter clone that uses jQuery, HTML 
 !["Homepage with tweet compose box"](https://github.com/shadeying/tweeter/blob/master/docs/show.png?raw=true)
 !["You can hide that annoying box!"](https://github.com/shadeying/tweeter/blob/master/docs/hide.png?raw=true)
 !["Cannot tweet when you have nothing to tweet :|"](https://github.com/shadeying/tweeter/blob/master/docs/empty-error.png?raw=true)
-!["Cannot tweet when you exceed limit too :|"](https://github.com/shadeying/tweeter/blob/master/docs/exceed-error.png?raw=true)
+
+## Cool Feature :sunglasses:
+- You can like the TWEETS!!!
+- Of course you can as many tweets as you want as well!!
 
 ## Getting Started
 
